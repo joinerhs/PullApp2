@@ -105,7 +105,7 @@ class _HomeState extends State<Home> {
               title: new Text("Calculadora IMC"),              
               trailing: new Icon(Icons.fitness_center),
               onTap: () => Navigator.of(context).push(new MaterialPageRoute(
-                builder: (BuildContext context) => Calculadora(),
+                builder: (BuildContext context) => MiCalculadora(),
                 )),
             ),
             new Divider(),
