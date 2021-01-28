@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "3671784385",
+    "project_id": "pulldb",
+    "storage_bucket": "pulldb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:3671784385:android:c7b68fdcf796007bd2cd40",
+        "android_client_info": {
+          "package_name": "com.example.pullapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "3671784385-353j7dppjg1g7g2ld377jqn3nqptdh77.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC7JvKQgUbIodJDOyqicOlBNhXljdTGKSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "3671784385-353j7dppjg1g7g2ld377jqn3nqptdh77.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

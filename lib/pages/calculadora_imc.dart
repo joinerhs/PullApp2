@@ -4,7 +4,6 @@ import 'dart:ui' as ui;
 import 'package:flutter/material.dart';
 import 'package:decimal/decimal.dart';
 
-
 class MiCalculadora extends StatefulWidget {
   @override
   State<StatefulWidget> createState() => Calculadora();
@@ -18,14 +17,14 @@ class Calculadora extends State<MiCalculadora> {
 
   String muestreImc = "";
   String pesoSugerido = "";
-  
+
   //formula para la mujer
-  void PesoIdealMujer(){
+  void PesoIdealMujer() {
     int pesoidealm = 21;
     int decimals = 2;
     int formula = pow(10, decimals);
 
-    //validaciones campos vacios  
+    //validaciones campos vacios
     if (my_form_key.currentState.validate()) {
       double peso = double.parse(controller_peso.text);
       double altura = double.parse(controller_talla.text);
@@ -51,10 +50,10 @@ class Calculadora extends State<MiCalculadora> {
   }
 
   //formula para el hombre
-  void PesoIdealHombre(){
+  void PesoIdealHombre() {
     int pesoidealh = 24;
-    int decimals = 2; 
-    int formula = pow(10, decimals); 
+    int decimals = 2;
+    int formula = pow(10, decimals);
 
     //validaciones campos vacios
     if (my_form_key.currentState.validate()) {
@@ -98,7 +97,6 @@ class Calculadora extends State<MiCalculadora> {
     }
   }
 
-
   @override
   Widget build(BuildContext context) {
     final ui.Size logicalSize = MediaQuery.of(context).size;
@@ -106,7 +104,7 @@ class Calculadora extends State<MiCalculadora> {
     return Scaffold(
       resizeToAvoidBottomPadding: false,
       appBar: new AppBar(
-        title: new Text('Calculadora IMC'),        
+        title: new Text('Calculadora IMC'),
       ),
       body: Form(
           key: my_form_key,
@@ -132,7 +130,7 @@ class Calculadora extends State<MiCalculadora> {
                             height: 150.0,
                             image: new AssetImage('images/scale.png'),
                           ),
-                          )
+                        )
                       ],
                     ),
                   ),
@@ -147,23 +145,23 @@ class Calculadora extends State<MiCalculadora> {
                           height: 50,
                           padding: EdgeInsets.all(7),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(color: Colors.black, blurRadius: 5)
-                            ]),
-                            child: TextFormField(
-                              controller: controller_peso,
-                              validator: (value) {
-                                if (value.isEmpty) return "Digita el Peso Kg";
-                              },
-                              decoration: InputDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50)),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(color: Colors.black, blurRadius: 5)
+                              ]),
+                          child: TextFormField(
+                            controller: controller_peso,
+                            validator: (value) {
+                              if (value.isEmpty) return "Digita el Peso Kg";
+                            },
+                            decoration: InputDecoration(
                                 hintText: "Peso Kg",
                                 icon: Icon(Icons.account_balance_wallet,
-                                color: Colors.purpleAccent)
-                              ),
-                              keyboardType: TextInputType.number,
-                            ),
+                                    color: Colors.purpleAccent)),
+                            keyboardType: TextInputType.number,
+                          ),
                         ),
                         Divider(),
                         Container(
@@ -171,23 +169,23 @@ class Calculadora extends State<MiCalculadora> {
                           height: 50,
                           padding: EdgeInsets.all(7),
                           decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(50)),
-                            color: Colors.white,
-                            boxShadow: [
-                              BoxShadow(color: Colors.black, blurRadius: 5)
-                            ]),
-                            child: TextFormField(
-                              controller: controller_talla,
-                              validator: (value) {
-                                if (value.isEmpty) return "Digita Estatura Cm";
-                              },
-                              decoration: InputDecoration(
+                              borderRadius:
+                                  BorderRadius.all(Radius.circular(50)),
+                              color: Colors.white,
+                              boxShadow: [
+                                BoxShadow(color: Colors.black, blurRadius: 5)
+                              ]),
+                          child: TextFormField(
+                            controller: controller_talla,
+                            validator: (value) {
+                              if (value.isEmpty) return "Digita Estatura Cm";
+                            },
+                            decoration: InputDecoration(
                                 hintText: "Estatura Cm",
                                 icon: Icon(Icons.present_to_all,
-                                color: Colors.blueAccent)
-                              ),
-                              keyboardType: TextInputType.number,
-                            ),
+                                    color: Colors.blueAccent)),
+                            keyboardType: TextInputType.number,
+                          ),
                         ),
                       ],
                     ),
@@ -201,23 +199,26 @@ class Calculadora extends State<MiCalculadora> {
                       FlatButton(
                         onPressed: PesoIdealMujer,
                         shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(30.0)),
-                          color: Colors.pinkAccent,
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: <Widget>[Icon(Icons.person), Text('Mujer')],
-                          ),
+                            borderRadius: new BorderRadius.circular(30.0)),
+                        color: Colors.pinkAccent,
+                        padding: EdgeInsets.all(10.0),
+                        child: Column(
+                          children: <Widget>[Icon(Icons.person), Text('Mujer')],
+                        ),
                       ),
                       VerticalDivider(),
                       FlatButton(
                         onPressed: PesoIdealHombre,
                         shape: new RoundedRectangleBorder(
-                          borderRadius: new BorderRadius.circular(30.0)),
-                          color: Colors.blueAccent,
-                          padding: EdgeInsets.all(10.0),
-                          child: Column(
-                            children: <Widget>[Icon(Icons.person), Text('Hombre')],
-                          ),
+                            borderRadius: new BorderRadius.circular(30.0)),
+                        color: Colors.blueAccent,
+                        padding: EdgeInsets.all(10.0),
+                        child: Column(
+                          children: <Widget>[
+                            Icon(Icons.person),
+                            Text('Hombre')
+                          ],
+                        ),
                       ),
                     ],
                   ),
@@ -229,19 +230,18 @@ class Calculadora extends State<MiCalculadora> {
                     height: 50.0,
                     width: 300,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFFFE2E64), Color(0xFFfF781D8)]
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                      //creamos resultado del TextFormField
-                      child: Center(
-                        child: Text(
-                          muestreImc,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                          ),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFFFE2E64), Color(0xFFfF781D8)]),
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    //creamos resultado del TextFormField
+                    child: Center(
+                      child: Text(
+                        muestreImc,
+                        style: TextStyle(
+                          fontSize: 20.0,
                         ),
                       ),
+                    ),
                   ),
                   Divider(
                     height: 15.0,
@@ -250,19 +250,18 @@ class Calculadora extends State<MiCalculadora> {
                     height: 50.0,
                     width: 300,
                     decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Color(0xFFf04B4AE), Color(0xFFf81F7F3)]
-                      ),
-                      borderRadius: BorderRadius.all(Radius.circular(15))),
-                      //creamos resultador del TextFormField
-                      child: Center(
-                        child: Text(
-                          pesoSugerido,
-                          style: TextStyle(
-                            fontSize: 20.0,
-                          ),
+                        gradient: LinearGradient(
+                            colors: [Color(0xFFf04B4AE), Color(0xFFf81F7F3)]),
+                        borderRadius: BorderRadius.all(Radius.circular(15))),
+                    //creamos resultador del TextFormField
+                    child: Center(
+                      child: Text(
+                        pesoSugerido,
+                        style: TextStyle(
+                          fontSize: 20.0,
                         ),
                       ),
+                    ),
                   ),
                   Divider(
                     height: 1,
@@ -283,6 +282,6 @@ class Calculadora extends State<MiCalculadora> {
                   )
                 ],
               ))),
-      );
+    );
   }
 }

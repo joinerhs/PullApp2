@@ -1,9 +1,6 @@
 name: pullapp
 description: A new Flutter project.
 
-
-
-
 version: 1.0.0+1
 
 environment:
@@ -13,8 +10,12 @@ dependencies:
   flutter:
     sdk: flutter
 
+  #Firebase
+  firebase_core: ^0.5.0
+  firebase_auth: ^0.18.0+1
 
-  
+  provider: ^4.3.2+1
+
   cupertino_icons: ^1.0.0
 
 dev_dependencies:
@@ -22,10 +23,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
 
-
 flutter:
-
-
   uses-material-design: true
 
   assets:
@@ -42,5 +40,3 @@ flutter:
     - images/barra.jpg
     - images/mancuernas.jpg
     - images/estiramiento.jpg
-
-  
