@@ -8,6 +8,29 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Login Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.deepPurple,
+        accentColor: Colors.orange,
+        cursorColor: Colors.orange,
+        textTheme: TextTheme(
+          display2: TextStyle(
+            fontFamily: 'OpenSans',
+            fontSize: 45.0,
+            color: Colors.orange,
+          ),
+          button: TextStyle(
+            fontFamily: 'OpenSans',
+          ),
+          subhead: TextStyle(fontFamily: 'NotoSans'),
+          body1: TextStyle(fontFamily: 'NotoSans'),
+        ),
+      ),
+    );
+  }
+}
+/* Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         children: [
@@ -22,6 +45,7 @@ class SignInPage extends StatelessWidget {
             decoration: InputDecoration(
               labelText: "Password",
             ),
+            obscureText: true,
           ),
           RaisedButton(
             onPressed: () {
@@ -36,4 +60,4 @@ class SignInPage extends StatelessWidget {
       ),
     );
   }
-}
+} */
